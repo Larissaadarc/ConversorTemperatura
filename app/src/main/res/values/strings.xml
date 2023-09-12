@@ -7,6 +7,6 @@
     <string name="kelvin">Kelvin</string>
     <string name="msgCtoF">Realizada a conversão de Celsius para Fahrenheit</string>
     <string name="msgFtoC">Realizada a conversão de Fahrenheit para Celsius</string>
-    <string name="msgKtoC">Realizada a conversão de Celsius para Kelvin</string>
+    <string name="msgCtoK">Realizada a conversão de Celsius para Kelvin</string>
 
 </resources>

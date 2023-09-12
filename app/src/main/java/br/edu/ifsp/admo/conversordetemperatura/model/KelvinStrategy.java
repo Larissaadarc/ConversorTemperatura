@@ -10,8 +10,8 @@ public class KelvinStrategy implements ConversorTemperatura {
         return instance;
     }
     @Override
-    public double converter(double temperatura){
-        return (temperatura - 32) / 1.8;
+    public double converter(double temperatura) {
+        return temperatura - 273.15;
     }
 
 }

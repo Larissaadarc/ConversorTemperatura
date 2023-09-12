@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         } if (escala.equals("F")){
             msgSaidaTextView.setText(getString(R.string.msgCtoF));
         } if (escala.equals("K")){
-            msgSaidaTextView.setText("Realiza a conversão de Celcius para Kelvin");
+            msgSaidaTextView.setText(getString(R.string.msgCtoK));
         }
 
 
