@@ -67,7 +67,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_celsius"
         app:layout_constraintTop_toBottomOf="@+id/guideline_horizon" />
-    
+    <Button
+        android:id="@+id/btn_celsiusTokelvin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/kelvin"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="@id/btn_celsius"
+        app:layout_constraintEnd_toEndOf="@id/btn_celsius"
+        app:layout_constraintTop_toBottomOf="@+id/btn_celsius" />
     <TextView
         android:id="@+id/textview_resultado"
         android:layout_width="wrap_content"

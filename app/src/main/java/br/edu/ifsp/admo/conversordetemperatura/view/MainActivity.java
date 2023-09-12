@@ -12,12 +12,14 @@ import br.edu.ifsp.admo.conversordetemperatura.R;
 import br.edu.ifsp.admo.conversordetemperatura.model.CelsiusStrategy;
 import br.edu.ifsp.admo.conversordetemperatura.model.ConversorTemperatura;
 import br.edu.ifsp.admo.conversordetemperatura.model.FahrenheitStrategy;
+import br.edu.ifsp.admo.conversordetemperatura.model.KelvinStrategy;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText inputEditText;
     private Button celsiusButton;
     private Button fahrenheitButton;
+    private Button kelvinButton;
     private TextView saidaTextView;
     private TextView msgSaidaTextView;
     private ConversorTemperatura conversorStrategy;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         inputEditText = findViewById(R.id.edittext_temperatura);
         celsiusButton = findViewById(R.id.btn_celsius);
         fahrenheitButton = findViewById(R.id.btn_fahrenheit);
+        kelvinButton = findViewById(R.id.btn_celsiusTokelvin);
         saidaTextView = findViewById(R.id.textview_resultado);
         msgSaidaTextView = findViewById(R.id.textview_resultado2);
     }
@@ -52,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 processo(FahrenheitStrategy.getInstance(), "F");
             }
+        });
+
+        kelvinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { processo(KelvinStrategy.getInstance(), "K");}
         });
     }
     private double lerTemperatura() throws NumberFormatException{
@@ -70,11 +78,14 @@ public class MainActivity extends AppCompatActivity {
     try {
         value = lerTemperatura();
         saidaTextView.setText(String.format("%.2f %s", conversorStrategy.converter(value), escala));
-        if(escala.equals("C")){
+        if (escala.equals("C")) {
             msgSaidaTextView.setText(getString(R.string.msgFtoC));
-        } else {
+        } if (escala.equals("F")){
             msgSaidaTextView.setText(getString(R.string.msgCtoF));
+        } if (escala.equals("K")){
+            msgSaidaTextView.setText("Realiza a conversão de Celcius para Kelvin");
         }
+
 
     }catch (NumberFormatException e){
         value = 0;
